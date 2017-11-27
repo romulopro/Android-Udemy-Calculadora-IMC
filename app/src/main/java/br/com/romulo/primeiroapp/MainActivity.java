@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 } else if (imc > 18.50) {
                     tConclusao.setText("Peso normal");
                 } else if (imc <= 18.50) {
-                    tConclusao.setText("Abaixo do Peso Ideal");
+                    tConclusao.setText("Abaixo do Peso Ideal3");
                 }
             }
         } catch (java.lang.IllegalStateException | java.lang.NumberFormatException e1) {
