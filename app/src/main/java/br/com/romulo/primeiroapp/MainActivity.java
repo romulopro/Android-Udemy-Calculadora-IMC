@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.view.inputmethod.InputMethodManager;
+
 
 import java.util.Locale;
 
@@ -17,6 +19,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void botaoClicado(View v) {
+        InputMethodManager inputManager = (InputMethodManager)
+                getSystemService(INPUT_METHOD_SERVICE);
+
+        inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                InputMethodManager.HIDE_NOT_ALWAYS);
         TextView tViewResultado = findViewById(R.id.resultadoCalculo);
         TextView tConclusao = findViewById(R.id.conclusao);
         try {
