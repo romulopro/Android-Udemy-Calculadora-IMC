@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -31,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
             } else {
                 double imc = peso / (altura * altura);
-                tViewResultado.setText(String.format("%.3f", imc));
+                tViewResultado.setText(String.format(Locale.US, "%.3f", imc));
                 if (imc > 30) {
                     tConclusao.setText("Obeso");
                 } else if (imc > 25) {
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 } else if (imc > 18.50) {
                     tConclusao.setText("Peso normal");
                 } else if (imc <= 18.50) {
-                    tConclusao.setText("Abaixo do Peso Ideal3");
+                    tConclusao.setText("Abaixo do Peso Ideal");
                 }
             }
         } catch (java.lang.IllegalStateException | java.lang.NumberFormatException e1) {
